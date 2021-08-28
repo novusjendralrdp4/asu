@@ -1,4 +1,4 @@
-name: Oshekher
+name: Awas
 
 on: workflow_dispatch
 
@@ -23,7 +23,7 @@ jobs:
     - name: Mengextract Ngrok File.
       run: Expand-Archive ngrok.zip
     - name: Connect Ke Akun Ngrok.
-      run: .\ngrok\ngrok.exe authtoken 1w2MaTSHpeVwRRBDsyyUdUfgyVU_5Bs2foTp5ffyD88YwU1fH
+      run: .\ngrok\ngrok.exe authtoken 1vUEiEu1D1626SKsJMmiyFn6Nhy_2KjwUeXu5k7QRCNsFSUrf
     - name: Mengaktifkan Akses RDP.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
