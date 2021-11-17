@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: windows-2022
     timeout-minutes: 9999
 
     steps:
@@ -23,8 +23,8 @@ jobs:
     - name: Mengextract Ngrok File.
       run: Expand-Archive ngrok.zip
     - name: Connect Ke Akun Ngrok.
-      run: .\ngrok\ngrok.exe authtoken 1vUEiEu1D1626SKsJMmiyFn6Nhy_2KjwUeXu5k7QRCNsFSUrf
-    - name: Mengaktifkan Akses RDP.
+      run: .\ngrok\ngrok.exe authtoken 20gItIhFOfztBkHwgYOJc0ZbEex_7nDkN6Nvnrx4zJeAP5j3o
+    - name: Mengaktifkan Akses Mantep.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
@@ -35,7 +35,7 @@ jobs:
         copy "Visual Studio 2019.lnk" "C:\Users\Public\Desktop\Visual Studio 2019.lnk"
     - name: Membuat Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp --region ap 3389"'
-    - name: Connect Ke RDP Kamu CPU 2 Core - 7GB Ram - 256 SSD.
+    - name: Connect Ke Mantep Kamu CPU 2 Core - 7GB Ram - 256 SSD.
       run: cmd /c start.bat
     - name: Berhasil Dibuat! Anda Bisa Menutup Tab Sekarang.
       run: cmd /c loop.bat
